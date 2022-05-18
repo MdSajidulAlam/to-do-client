@@ -8,7 +8,7 @@ const MyTask = () => {
     const [tasks, setTasks] = useState([])
     useEffect(() => {
         const email = user?.email
-        const url = `http://localhost:5000/mytasks?email=${email}`
+        const url = `https://rocky-waters-36222.herokuapp.com/mytasks?email=${email}`
         fetch(url)
             .then(res => res.json())
             .then(data => setTasks(data))

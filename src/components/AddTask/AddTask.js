@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import toast from 'react-hot-toast';
 import auth from '../../firebase.init';
 
 const AddTask = () => {
@@ -13,7 +14,7 @@ const AddTask = () => {
         const taskName = taskNameRef.current.value
         const taskDescription = taskDescriptionRef.current.value
         const task = { email, taskName, taskDescription }
-        const url = 'http://localhost:5000/addtask'
+        const url = 'https://rocky-waters-36222.herokuapp.com/addtask'
         fetch(url, {
             method: 'POST',
             headers: {
@@ -22,7 +23,8 @@ const AddTask = () => {
             body: JSON.stringify(task)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => toast.success('Task Added'))
+        e.target.reset()
     }
     return (
         <div className='mt-5 w-50 mx-auto'>
@@ -40,7 +42,7 @@ const AddTask = () => {
                     <Form.Label>Task Description</Form.Label>
                     <Form.Control ref={taskDescriptionRef} as="textarea" rows={3} />
                 </Form.Group>
-                <Button variant="primary" type="submit">
+                <Button variant="primary" type="Submit" value='Add Task'>
                     Submit
                 </Button>
             </Form>

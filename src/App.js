@@ -9,6 +9,7 @@ import SignUp from './components/SignUp/SignUp';
 import RequireAuth from './components/RequireAuth/RequireAuth';
 import MyTask from './components/MyTask/MyTask';
 import AddTask from './components/AddTask/AddTask';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -30,7 +31,7 @@ function App() {
           </RequireAuth>}>
         </Route>
       </Routes>
-
+      <Toaster />
     </div>
   );
 }

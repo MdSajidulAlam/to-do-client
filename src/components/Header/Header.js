@@ -21,14 +21,12 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
 
-                        {user ? <button onClick={handleSignOut}>Sign Out</button> : <NavLink to='/login' className={({ isActive }) => isActive ? "text-primary text-decoration-none m-3" : "text-dark text-decoration-none m-3"} >Login</NavLink>}
+                        {user ? <button className='btn btn-link text-decoration-none text-dark' onClick={handleSignOut}>Sign Out</button> : <NavLink to='/login' className={({ isActive }) => isActive ? "text-primary text-decoration-none m-3" : "text-dark text-decoration-none m-3"} >Login</NavLink>}
                     </Nav>
                     <Nav>
-                        {/* {user && <> */}
                         <NavLink to='/mytask' className={({ isActive }) => isActive ? "text-primary text-decoration-none m-3" : "text-dark text-decoration-none m-3"} >My Task</NavLink>
                         <NavLink to='/addtask' className={({ isActive }) => isActive ? "text-primary text-decoration-none m-3" : "text-dark text-decoration-none m-3"} >Add Task</NavLink>
 
-                        {/* </>} */}
                     </Nav>
                 </Navbar.Collapse>
             </Container>

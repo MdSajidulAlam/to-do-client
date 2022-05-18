@@ -56,7 +56,7 @@ const SignUp = () => {
                     Sign Up
                 </Button>
             </Form>
-            <p className='text-center mt-3'>Already in Perfumania? <Link to='/login'>Login</Link></p>
+            <p className='text-center mt-3'>Already in To-Do? <Link to='/login'>Login</Link></p>
         </div>
     );
 };
