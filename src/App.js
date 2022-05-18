@@ -6,15 +6,29 @@ import Header from './components/Header/Header';
 import { Route, Routes } from 'react-router-dom';
 import Login from './components/Login/Login';
 import SignUp from './components/SignUp/SignUp';
+import RequireAuth from './components/RequireAuth/RequireAuth';
+import MyTask from './components/MyTask/MyTask';
+import AddTask from './components/AddTask/AddTask';
 
 function App() {
   return (
-    <div className="App">
+    <div>
       <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
+        <Route path='/home' element={<Home />}></Route>
         <Route path='/login' element={<Login />}></Route>
         <Route path='/signup' element={<SignUp />}></Route>
+        <Route path='/mytask' element={
+          <RequireAuth>
+            <MyTask />
+          </RequireAuth>}>
+        </Route>
+        <Route path='/addtask' element={
+          <RequireAuth>
+            <AddTask />
+          </RequireAuth>}>
+        </Route>
       </Routes>
 
     </div>
