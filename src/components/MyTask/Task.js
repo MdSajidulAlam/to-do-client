@@ -6,7 +6,7 @@ const Task = ({ task }) => {
     const [complete, setComplete] = useState(false)
     const handleComplete = () => {
         setComplete(!complete)
-        toast.success('Task Completed')
+        toast.success('Task Completed', { id: 'Sajid' })
     }
     const handleDelete = (id) => {
         const confirm = window.confirm("Are you sure?")
@@ -17,7 +17,7 @@ const Task = ({ task }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    toast.success('Task deleted')
+                    toast.success('Task deleted', { id: 'Sajid' })
                 })
         }
     }
